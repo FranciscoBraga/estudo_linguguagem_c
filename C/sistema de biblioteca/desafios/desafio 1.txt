@@ -1,0 +1,53 @@
+#include <stdio.h>
+
+
+ char acervo[5][150];
+ char acervo2[2][150]= {"Dom Quixote","O Alquimista"};
+ int  escolha = 0;
+
+
+void cadastro_livro(){
+	printf("Cadastro de  Livros \n");
+	
+	for (int i=0;i<5;i++){
+		printf("Escreva o Titulo do Livro %d:  \n",i);
+		scanf("%s",acervo[i]); //não admite espaço
+	
+	}	
+			
+	printf("Livros na Biblioteca \n");
+			
+	for (int i=0;i<5;i++){
+		printf("Livro %s: \n" ,acervo[i]);
+	}		
+}
+
+void emprestar_livro(){
+ printf("Livros \n");
+	   
+	 for (int l = 0; l<2;l++){
+	    printf("%s \n",acervo2[l]);
+	}
+}
+
+int main() {
+	
+	  printf("Biblioteca C\n");
+	 
+	 do{
+	 	printf("Digite 1 - Cadastro de livro\n");
+	 	printf("Digite 2 - Emprestar livros\n");
+	 	scanf("%d", &escolha);
+	 }while(escolha == 0);
+	 
+	 if(escolha == 1) {
+	    cadastro_livro();
+	   	
+	 }else{
+	   emprestar_livro();
+	 }
+	 
+
+	return 0;
+}
+
