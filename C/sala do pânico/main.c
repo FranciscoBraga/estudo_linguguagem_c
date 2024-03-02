@@ -3,41 +3,71 @@
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-int fase = 0;
 
-int historia(){
+void historia(){
 	
-printf("Você é um renomado arqueólogo, conhecido por desvendar mistérios antigos em todo o mundo. Durante sua última expedição, você descobre um templo escondido nas profundezas da selva amazônica. Dentro do templo, você encontra uma sala secreta adornada com inscrições antigas e artefatos misteriosos.\n");
-printf("Ao explorar mais a fundo, você aciona acidentalmente uma armadilha ancestral e se vê preso dentro da sala do pânico.\n");
-printf("As paredes estão cobertas de símbolos enigmáticos, e uma atmosfera opressiva de mistério paira no ar. Você percebe que a única maneira de escapar é resolver uma série de desafios mortais deixados pelos antigos guardiões do templo.\n");
-printf("Com o tempo se esgotando e o coração pulsando com adrenalina, você se vê imerso em uma corrida contra o relógio para decifrar os quebra-cabeças, desvendar os enigmas e encontrar uma saída antes que seja tarde demais. Cada desafio revela um segredo antigo e perigoso, testando não apenas sua inteligência, mas também sua coragem e determinação.\n");
-printf("Enquanto você se aprofunda na sala do pânico, fica claro que não está apenas lutando pela sua própria sobrevivência, mas também pelo conhecimento ancestral que poderia mudar o curso da história. Com cada desafio superado, você se aproxima um passo mais perto da liberdade - mas também de descobrir os segredos ocultos que o templo guarda.\n");
-printf("Agora, cabe a você usar todas as suas habilidades e conhecimentos para escapar da sala do pânico e desvendar os mistérios milenares que ela guarda. O relógio está correndo, e o destino aguarda ansiosamente sua decisão. Você está pronto para enfrentar o desafio");
+printf("Vocï¿½ ï¿½ um renomado arqueï¿½logo, conhecido por desvendar mistï¿½rios antigos em todo o mundo. Durante sua ï¿½ltima expediï¿½ï¿½o, vocï¿½ descobre um templo escondido nas profundezas da selva amazï¿½nica. Dentro do templo, vocï¿½ encontra uma sala secreta adornada com inscriï¿½ï¿½es antigas e artefatos misteriosos.\n");
+printf("Ao explorar mais a fundo, vocï¿½ aciona acidentalmente uma armadilha ancestral e se vï¿½ preso dentro da sala do pï¿½nico.\n");
+printf("As paredes estï¿½o cobertas de sï¿½mbolos enigmï¿½ticos, e uma atmosfera opressiva de mistï¿½rio paira no ar. Vocï¿½ percebe que a ï¿½nica maneira de escapar ï¿½ resolver uma sï¿½rie de desafios mortais deixados pelos antigos guardiï¿½es do templo.\n");
+printf("Com o tempo se esgotando e o coraï¿½ï¿½o pulsando com adrenalina, vocï¿½ se vï¿½ imerso em uma corrida contra o relï¿½gio para decifrar os quebra-cabeï¿½as, desvendar os enigmas e encontrar uma saï¿½da antes que seja tarde demais. Cada desafio revela um segredo antigo e perigoso, testando nï¿½o apenas sua inteligï¿½ncia, mas tambï¿½m sua coragem e determinaï¿½ï¿½o.\n");
+printf("Enquanto vocï¿½ se aprofunda na sala do pï¿½nico, fica claro que nï¿½o estï¿½ apenas lutando pela sua prï¿½pria sobrevivï¿½ncia, mas tambï¿½m pelo conhecimento ancestral que poderia mudar o curso da histï¿½ria. Com cada desafio superado, vocï¿½ se aproxima um passo mais perto da liberdade - mas tambï¿½m de descobrir os segredos ocultos que o templo guarda.\n");
+printf("Agora, cabe a vocï¿½ usar todas as suas habilidades e conhecimentos para escapar da sala do pï¿½nico e desvendar os mistï¿½rios milenares que ela guarda. O relï¿½gio estï¿½ correndo, e o destino aguarda ansiosamente sua decisï¿½o. Vocï¿½ estï¿½ pronto para enfrentar o desafio.\n");
 
-
- fase = 1;
- return fase;
+  int getFases = calcula_fase(0);
+  proxima_fase(getFases); 
+  
 }
-
 
 void desafio_um(){
-  printf("    [06]    \n");
-  printf("[09][x][03]\n");
-  printf("    [18]    \n");
-  
+	  int valor = 0;
+	  int tempo = 60;
+	  printf("    [06]    \n");
+	  printf("[09][x][03]\n");
+	  printf("    [18]    \n");
+
+      printf("\nAs parede vai te impressar, descubra o valor que estÃ¡ faltando?\n");
+	  scanf("%d",&valor);
+      printf("|   o    |\n");
+	  printf("|  /| |\n");
+	  printf("|  | |   |\n");
+	  
+
+	  while(valor != 3){
+	 //implementar tempo 
+	  scanf("%d",&valor);
+	    printf("|   o    |\n");
+	  printf("|  /| |\n");
+	  printf("|  | |   |\n");
+
+	  };
 	
+ int getFases = calcula_fase(0);
+ proxima_fase(getFases); 
 }
 
-int main() {
+int calcula_fase(int fase_anterior){
+	int fase_atual = fase_anterior;
+	char prosseguir = 'N';
+	printf("\nPara prosseguir aperte: S e  \n");
+	scanf("%c",&prosseguir);
+	if(prosseguir =='S'){
+		return fase_atual = fase_anterior +1;
+	}
+	return fase_atual;
+}
 
-while(fase != 11){
-	if(fase == 0)
-	{
-	 fase = historia();
-	}else if (fase == 1){
-	  desafio_um();
+void proxima_fase(int getFases){
+	int fase_atual = getFases;
+    switch(fase_atual)
+    {
+    	case 0: historia();
+		 break;
+    	case 1: desafio_um();
+		 break;
+ 
 	}
 }
-
-	return 0;
+int main() {
+	historia();
+    return 0;
 }
