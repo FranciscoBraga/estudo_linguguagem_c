@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* cadastro de usuário */
+/* cadastro de usuï¿½rio */
 
-//declarando ponteiro dentro da função cadastro
+//declarando ponteiro dentro da funï¿½ï¿½o cadastro
  void cadastro(char* nome,char* cpf,char* rg, int* idade,int* casado, int* habilitado){
  	
    printf("Seu nome e : %s\n",nome);
@@ -35,13 +35,13 @@ int main() {
 	int casado = 0;
 	int habilitado;
 	
-	printf("------------Cadatro de usuário--------------------\n");
+	printf("------------Cadatro de usuï¿½rio--------------------\n");
     printf("Digite seu nome:\n");
-	scanf("%s",&nome); 
+	scanf("%c",&nome); 
 	printf("Digite seu CPF:\n");
-	scanf("%s",&cpf);
+	scanf("%c",&cpf);
 	 printf("Digite seu RG:\n");
-	scanf("%s",&rg);
+	scanf("%c",&rg);
 	printf("Digite sua idade:\n");
 	scanf("%d",&idade);
 	printf("Voce e casado digite 1 para sim e 0 para nao :\n");
@@ -49,7 +49,7 @@ int main() {
 	printf("Voce e habilitado digite 1 para sim e 0 para nao :\n ");
 	scanf("%d",&habilitado);
 //	printf("Voce tem habilitacao '%c':",&habilitado);
-	cadastro(nome,cpf,rg,&idade,&casado,&habilitado); // acessando o endereço de memória e passando para a função cadastro
+	cadastro(nome,cpf,rg,&idade,&casado,&habilitado); // acessando o endereï¿½o de memï¿½ria e passando para a funï¿½ï¿½o cadastro
 	
 	//,cpf,rg,idade,casado,habilitado)
 		
